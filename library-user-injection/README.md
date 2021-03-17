@@ -1,0 +1,1 @@
+This library may be used in microservices behind the Gateway to easily inject user objects into the requests forwarded by the gateway
