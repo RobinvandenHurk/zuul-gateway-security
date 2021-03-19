@@ -37,13 +37,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-<!--		Include user injection -->
 		<dependency>
 			<groupId>com.robinvandenhurk.gateway.library</groupId>
 			<artifactId>library-user-injection</artifactId>
-			<version>0.1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../library-user-injection/compiled/user-injection.jar</systemPath>
+			<version>0.2</version>
 		</dependency>
 	</dependencies>
 

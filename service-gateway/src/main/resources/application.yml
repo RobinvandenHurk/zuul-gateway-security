@@ -1,10 +1,10 @@
 server:
-  port: 8080
+  port: 80
 zuul:
   routes:
     auth:
       path: /auth/**
-      url: http://localhost:8081/auth
+      url: http://service-authorization/auth
     user:
       path: /user/**
-      url: http://localhost:8082/user
+      url: http://service-user/user

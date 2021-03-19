@@ -38,6 +38,7 @@ public class RemoteAuthorizationHeaderFilter extends OncePerRequestFilter {
 //      Send request to remote authorization server
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
         if (authorizationHeader != null && authorizationHeader.length() > 0) {
+//            Request to localhost to be routed by the gateway
             HTTPRequestData requestData = new HTTPRequestData(new URL("http://localhost:" + SERVER_PORT + "/auth/token/verify"), "POST");
             VerifyRequest verifyRequest = new VerifyRequest(authorizationHeader);
 

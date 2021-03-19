@@ -2,7 +2,7 @@ package com.robinvandenhurk.gateway.library.userinjection;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.robinvandenhurk.gateway.library.userinjection.principal.AnonymousGatewayUserPrincipal;
-import com.robinvandenhurk.gateway.library.userinjection.principal.AuthorizedGatewayUserPrincipal;
+import com.robinvandenhurk.gateway.library.userinjection.principal.AuthenticatedGatewayUserPrincipal;
 import com.robinvandenhurk.gateway.library.userinjection.principal.GatewayUserPrincipal;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +33,7 @@ public class ForwardedHttpServletRequest extends HttpServletRequestWrapper {
 
             if (gatewayUserMap.containsKey("id")) {
 //            Authenticated user
-                this.gatewayUserPrincipal = AuthorizedGatewayUserPrincipal.fromHeader(header);
+                this.gatewayUserPrincipal = AuthenticatedGatewayUserPrincipal.fromHeader(header);
             }
         }
 

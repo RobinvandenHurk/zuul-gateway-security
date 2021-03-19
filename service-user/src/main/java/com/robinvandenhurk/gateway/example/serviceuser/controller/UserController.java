@@ -7,6 +7,8 @@ import com.robinvandenhurk.gateway.example.serviceuser.domain.http.response.Http
 import com.robinvandenhurk.gateway.example.serviceuser.repository.AuthorityRepository;
 import com.robinvandenhurk.gateway.example.serviceuser.repository.UserRepository;
 import com.robinvandenhurk.gateway.library.userinjection.ForwardedHttpServletRequest;
+import com.robinvandenhurk.gateway.library.userinjection.annotation.AuthorityRequired;
+import com.robinvandenhurk.gateway.library.userinjection.annotation.AuthorityRequiredAspect;
 import com.robinvandenhurk.gateway.library.userinjection.principal.GatewayUserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -55,6 +57,7 @@ public class UserController {
     }
 
     @GetMapping
+    @AuthorityRequired(authority = "CREATE")
     public ResponseEntity<HttpResponse> getCurrentUserData(ForwardedHttpServletRequest request) {
         GatewayUserPrincipal gatewayUser = request.getUserPrincipal();
 
