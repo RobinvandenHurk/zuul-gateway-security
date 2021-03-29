@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.robinvandenhurk.gateway.library</groupId>
 	<artifactId>library-user-injection</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>library-user-injection</name>
 	<description>Library for services behind the gateway to retrieve user information</description>
 	<properties>
