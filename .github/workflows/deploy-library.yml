@@ -4,7 +4,7 @@ on:
     types: [created]
 defaults:
   run:
-    working-directory: library-user-injection
+    working-directory: ./library-user-injection
 jobs:
   publish:
     runs-on: ubuntu-latest
