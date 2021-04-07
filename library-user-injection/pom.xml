@@ -141,8 +141,7 @@
 						<configuration>
 							<serverId>ossrh</serverId>
 							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-							<!--  Change to true once we're good! -->
-							<autoReleaseAfterClose>false</autoReleaseAfterClose>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -183,7 +182,4 @@
 			<name>Robin van den Hurk</name>
 		</developer>
 	</developers>
-
-
-
 </project>
