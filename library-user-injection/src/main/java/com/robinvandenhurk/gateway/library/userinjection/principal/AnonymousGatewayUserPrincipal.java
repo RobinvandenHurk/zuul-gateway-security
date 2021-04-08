@@ -11,7 +11,7 @@ public class AnonymousGatewayUserPrincipal extends GatewayUserPrincipal {
     public AnonymousGatewayUserPrincipal() {
         super("ANONYMOUS_USER");
 
-        setId(-1);
+        setId(-1L);
     }
 
 }

@@ -11,7 +11,7 @@ import java.security.Principal;
 public abstract class GatewayUserPrincipal implements Principal {
 
     private String name;
-    private int id;
+    private Long id;
 
     public GatewayUserPrincipal(String name) {
         this.name = name;
@@ -22,11 +22,11 @@ public abstract class GatewayUserPrincipal implements Principal {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    protected void setId(int id) {
+    protected void setId(Long id) {
         this.id = id;
     }
 
