@@ -46,7 +46,7 @@ public class AuthorityRequiredAspect {
             if (authenticatedUser.getAuthorities().contains(authority)) {
                 return pjp.proceed();
             } else {
-                return HttpResponse.createForbidden();
+                return HttpResponse.createForbidden(authority);
             }
         } else {
             return HttpResponse.createUnauthorized();
