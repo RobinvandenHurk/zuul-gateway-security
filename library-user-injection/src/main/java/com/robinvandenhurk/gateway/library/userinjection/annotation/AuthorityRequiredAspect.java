@@ -1,17 +1,13 @@
 package com.robinvandenhurk.gateway.library.userinjection.annotation;
 
-import com.robinvandenhurk.gateway.library.userinjection.ForwardedHttpServletRequest;
+import com.robinvandenhurk.gateway.library.userinjection.domain.http.response.HttpResponse;
 import com.robinvandenhurk.gateway.library.userinjection.principal.AuthenticatedGatewayUserPrincipal;
 import com.robinvandenhurk.gateway.library.userinjection.principal.GatewayUserPrincipal;
-import com.robinvandenhurk.gateway.library.userinjection.response.AuthorityRequiredResponse;
-import com.robinvandenhurk.gateway.library.userinjection.response.UnauthorizedResponse;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,10 +46,10 @@ public class AuthorityRequiredAspect {
             if (authenticatedUser.getAuthorities().contains(authority)) {
                 return pjp.proceed();
             } else {
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new AuthorityRequiredResponse(authority));
+                return HttpResponse.createForbidden();
             }
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new UnauthorizedResponse());
+            return HttpResponse.createUnauthorized();
         }
     }
 
