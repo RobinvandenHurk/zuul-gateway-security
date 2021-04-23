@@ -3,8 +3,6 @@ package com.robinvandenhurk.gateway.library.userinjection.domain.http.response.d
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.robinvandenhurk.gateway.library.userinjection.domain.http.response.HttpResponseData;
 
-import java.util.List;
-
 /**
  * Author:    Robin van den Hurk
  * Date:      22/03/2021

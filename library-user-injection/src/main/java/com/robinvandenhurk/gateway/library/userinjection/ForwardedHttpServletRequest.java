@@ -31,7 +31,7 @@ public class ForwardedHttpServletRequest extends HttpServletRequestWrapper {
         if (header != null && !header.isEmpty()) {
             Map<String, Object> gatewayUserMap = mapper.readValue(Base64.getDecoder().decode(header.getBytes(StandardCharsets.UTF_8)), Map.class);
 
-            if (gatewayUserMap.containsKey("id") && !gatewayUserMap.get("id").equals("-1")) {
+            if (gatewayUserMap.containsKey("id")) {
 //            Authenticated user
                 this.gatewayUserPrincipal = AuthenticatedGatewayUserPrincipal.fromHeader(header);
             }
